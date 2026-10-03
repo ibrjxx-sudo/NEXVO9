@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b20">
+  <meta name="description" content="NEXVO — مساحة آمنة للتواصل مع من تحب.">
+  <meta property="og:title" content="NEXVO">
+  <meta property="og:description" content="مساحة آمنة للتواصل مع من تحب.">
+  <meta property="og:image" content="">
+  <title>NEXVO — تواصل بطريقتك</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="rail" aria-label="التنقل الرئيسي">
+      <a class="brand-mark" href="#" aria-label="NEXVO الرئيسية">N<span>.</span></a>
+      <nav class="rail-nav">
+        <button class="rail-link active" data-page="chats" aria-label="المحادثات" title="المحادثات"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H5l1.7-3.4A7.5 7.5 0 1 1 20 11.5Z"/></svg></button>
+        <button class="rail-link" data-page="updates" aria-label="الحالات" title="الحالات"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="2"/></svg></button>
+        <button class="rail-link" data-page="calls" aria-label="المكالمات" title="المكالمات"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.8 9.7 7l-2 2.5a14 14 0 0 0 6.8 6.8l2.5-2 3.2 3.1-1.5 3a2 2 0 0 1-2.2 1.1A18.6 18.6 0 0 1 2.5 7.5 2 2 0 0 1 3.6 5.3l3-1.5Z"/></svg></button>
+      </nav>
+      <div class="rail-bottom">
+        <button class="rail-link profile-rail-button" data-action="profile" aria-label="الملف الشخصي والإعدادات" title="الملف الشخصي والإعدادات"><span class="rail-avatar" id="rail-avatar">N</span></button>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <section class="inbox-panel" aria-label="قائمة المحادثات">
+        <header class="inbox-header">
+          <div class="brand-wordmark">NEXVO<span class="brand-dot">.</span></div>
+          <div class="header-actions">
+            <button class="icon-button" data-action="new-chat" aria-label="محادثة جديدة" title="محادثة جديدة"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+            <button class="icon-button" data-action="profile" aria-label="الإعدادات" title="الإعدادات"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/><path d="m19.4 15 .1.1a1.8 1.8 0 1 1-2.5 2.5l-.1-.1a1.8 1.8 0 0 0-3 .9v.2a1.8 1.8 0 1 1-3.6 0v-.2a1.8 1.8 0 0 0-3-.9l-.1.1a1.8 1.8 0 1 1-2.5-2.5l.1-.1a1.8 1.8 0 0 0-.9-3h-.2a1.8 1.8 0 1 1 0-3.6h.2a1.8 1.8 0 0 0 .9-3l-.1-.1a1.8 1.8 0 1 1 2.5-2.5l.1.1a1.8 1.8 0 0 0 3-.9v-.2a1.8 1.8 0 1 1 3.6 0v.2a1.8 1.8 0 0 0 3 .9l.1-.1a1.8 1.8 0 1 1 2.5 2.5l-.1.1a1.8 1.8 0 0 0 .9 3h.2a1.8 1.8 0 1 1 0 3.6h-.2a1.8 1.8 0 0 0-.9 3Z"/></svg></button>
+          </div>
+        </header>
+        <p class="eyebrow" id="inbox-kicker">مساحتك، على طريقتك</p>
+        <h1 id="inbox-title">المحادثات</h1>
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="search-input" type="search" placeholder="ابحث عن محادثة" autocomplete="off">
+          <kbd>⌘ K</kbd>
+        </label>
+        <div class="filter-row" aria-label="تصفية المحادثات">
+          <button class="filter-chip selected" data-filter="all">الكل</button>
+          <button class="filter-chip" data-filter="unread">غير مقروءة</button>
+          <button class="filter-chip" data-filter="favorites">المفضلة</button>
+        </div>
+        <div class="status-strip" id="status-strip" aria-label="الحالات"></div>
+        <div class="conversation-list" id="conversation-list"></div>
+        <div class="inbox-footer">
+          <span class="online-dot"></span>
+          <span>محادثاتك خاصة بك</span>
+          <span class="footer-lock" aria-hidden="true">⌑</span>
+        </div>
+      </section>
+
+      <section class="content-panel" id="content-panel" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modal-backdrop" role="presentation">
+    <section class="modal-card" id="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title"></section>
+  </div>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <script src="app.js"></script>
+</body>
+</html>
